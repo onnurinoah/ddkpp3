@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MainDisplay from './MainDisplay';
+import InputPage from './InputPage';
 
 function App() {
+  // URL 쿼리 파라미터를 읽어와 모드를 결정
+  const queryParams = new URLSearchParams(window.location.search);
+  const mode = queryParams.get('mode');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* 주소에 ?mode=input이 있으면 입력 페이지, 없으면 메인 전광판 페이지 표시 
+      */}
+      {mode === 'input' ? <InputPage /> : <MainDisplay />}
     </div>
   );
 }
