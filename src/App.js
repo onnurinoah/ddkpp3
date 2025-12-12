@@ -1,6 +1,6 @@
 import React from 'react';
-import MainDisplay from './MainDisplay';
-import InputPage from './InputPage';
+import MainDisplay from './MainDisplay.js';
+import InputPage from './InputPage.js';
 
 function App() {
   // URL 쿼리 파라미터를 읽어와 모드를 결정
